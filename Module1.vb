@@ -26,7 +26,7 @@ Module Module1
                 Console.WriteLine("Error while opening the registry for " & Quote & "AppsUseLightTheme" & Quote & " because of an incompatible system")
             Else
                 Dim rkColorMode As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", False)
-                Dim ColorStr As String = rkColorMode.GetValue("SystemUsesLightTheme").ToString()
+                Dim ColorStr As String = rkColorMode.GetValue("AppsUseLightTheme").ToString()
                 rkColorMode.Close()
                 If ColorStr = "0" Then
                     Console.WriteLine(Quote & "AppsUseLightTheme" & Quote & ": 0. Applications optimized for Windows color theming use the dark theme.")
